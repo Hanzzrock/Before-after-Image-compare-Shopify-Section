@@ -1,0 +1,240 @@
+{{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js' | script_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/js/jquery.twentytwenty.min.js' | script_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/js/jquery.event.move.min.js' | script_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/css/twentytwenty.min.css'| stylesheet_tag }}
+
+<script>$(function($){$('.twentytwenty-container').twentytwenty();});</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<section id="about" class="about-section pt-100">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="image mb-30">
+<div class='twentytwenty-container'>
+  {%
+          include 'rimg',
+          img: section.settings.before-image,
+          size: '3024x4032',
+          lazy: true,
+          
+   %}
+  {%
+          include 'rimg',
+          img: section.settings.after-image,
+          size: '3024x4032',
+          lazy: true,
+          
+   %}
+
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="content mb-30">
+<h2 class="title">
+{{ section.settings.heading-text}}
+
+
+<span></span>
+</h2>
+<div class="center">
+<ul class="content-list">
+  
+{%
+          include 'rimg',
+          img: section.settings.product-image,
+          size: '500x500',
+          lazy: true,
+          
+   %}
+<h6>{{ section.settings.content-list}}
+
+ </h6>
+</ul>
+<a href="{{ section.settings.button1_url}}" class="site-button site-btn-effect vertical-center">{{ section.settings.button_text}}</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-shape">
+<img src="https://cdn.shopify.com/s/files/1/0278/4421/4886/files/shape1.png?v=1636667604" alt="GK HAIR PROFESSIONALS ONLY">
+<img src="https://cdn.shopify.com/s/files/1/0278/4421/4886/files/line1.png?v=1636667647" alt="GK HAIR PROFESSIONALS ONLY">
+</div>
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Before/After Image",
+    "settings": [
+   {
+      "type": "image_picker",
+      "id": "before-image",
+      "label": "Before Image"    
+    },
+    {
+      "type": "image_picker",
+      "id": "after-image",
+      "label": "after Image"    
+    },
+    {
+      "type": "text",
+      "id": "heading-text",
+      "label": "title",
+      "default": "THE BEST HAIR TREATMENT"
+    },
+    {
+      "type": "image_picker",
+      "id": "product-image",
+      "label": "Produut Image"    
+    },
+    {
+      "type": "text",
+      "id": "content-list",
+      "label": "Content",
+      "default": "GET THE BEST HAIR WITH ONE FORMULA THAT CAN BE CUSTOMIZED TO YOUR NEEDS"
+    },
+{
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+	"default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button1_url",
+      "label": "button link"
+    }
+      ],
+     "presets": [
+    {
+      "category": "image",
+      "name": "Before/After Image",
+      "settings": {
+       
+      }
+	
+    }
+  ]
+
+  }
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}
+
+
+<style>
+  
+  .about-section .content .title span::before {
+  display: none;
+  }
+*,::after,::before{box-sizing:border-box;}
+h2,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+h2{font-size:calc(1.325rem + .9vw);}
+@media (min-width:1200px){
+h2{font-size:2rem;}
+}
+h6{font-size:1rem;}
+
+a{color:#0d6efd;text-decoration:underline;}
+a:hover{color:#0a58ca;}
+img{vertical-align:middle;}
+::-moz-focus-inner{padding:0;border-style:none;}
+.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto;}
+@media (min-width:576px){
+.container{max-width:540px;}
+}
+@media (min-width:768px){
+.container{max-width:720px;}
+}
+@media (min-width:992px){
+.container{max-width:960px;}
+}
+@media (min-width:1200px){
+.container{max-width:1140px;}
+}
+@media (min-width:1400px){
+.container{max-width:1320px;}
+}
+.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(var(--bs-gutter-y) * -1);margin-right:calc(var(--bs-gutter-x)/ -2);margin-left:calc(var(--bs-gutter-x)/ -2);}
+.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/ 2);padding-left:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y);}
+@media (min-width:992px){
+.col-lg-6{flex:0 0 auto;width:50%;}
+}
+.align-items-center{align-items:center!important;}
+/*! CSS Used from: https://templates.hibootstrap.com/wofy/default/assets/css/style.css */
+h2,h6{color:#0a0a0a;}
+h2{font-weight:600;font-size:50px;font-family:"Vollkorn", serif;}
+h6{font-weight:500;}
+a{color:#0a0a0a;-webkit-transition:0.5s;transition:0.5s;text-decoration:none;outline:0!important;}
+a:hover{color:#b4765a;text-decoration:none;}
+:focus{outline:0!important;}
+img{max-width:100%;height:auto;}
+p{color:#333333;margin-bottom:15px;font-weight:400;}
+.pt-100{padding-top:80px;}
+.pb-70{padding-bottom:70px;}
+.mb-30{margin-bottom:30px;}
+.primary-btn{outline:none!important;cursor:pointer;display:inline-block;vertical-align:middle;text-align:center;background:#b4765a;color:#ffffff;text-transform:capitalize;font-size:15px;padding:12px 30px;border-radius:0;border:1px solid transparent;-webkit-transition:0.5s;transition:0.5s;}
+.primary-btn:hover{color:#b4765a;background-color:transparent;border-color:#b4765a;}
+.about-section{position:relative;overflow:hidden;background:#7742bf;z-index:1;}
+.about-section::before{position:absolute;content:'';left:0;top:0;width:30%;height:100%;background:#ebebebc7;z-index:0;z-index:-1;}
+.about-section .bg-shape{z-index:-2;}
+.about-section .bg-shape img{position:absolute;left:28%;top:0;width:70%;height:100%;z-index:-2;}
+.about-section .bg-shape img:first-child{opacity:.01;}
+.about-section .bg-shape img:last-child{z-index:-1;}
+@media (max-width: 991px) and (min-width: 768px){
+.about-section .image img{width:100%;}
+}
+.about-section .content .title{color:#ffffff !important;padding-bottom:25px;margin-bottom:25px;position:relative;}
+.about-section .content .title span{position:absolute;left:0;bottom:0;width:20%;height:2px;z-index:1;}
+.about-section .content .title span::after{position:absolute;content:'';left:0;bottom:0;width:60%;height:2px;background:#b4765a;}
+.about-section .content .title span::before{position:absolute;content:'';right:0;bottom:0;width:30%;height:2px;background:#b4765a;}
+.about-section .content .text{color:#cccccc;margin-bottom:25px;}
+.about-section .content .content-list{margin:0;padding:0;margin-bottom:30px;list-style:none;}
+.about-section .content .content-list li{position:relative;padding-left:30px;margin-bottom:15px;}
+.about-section .content .content-list li::after{position:absolute;content:'';left:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);width:15px;height:1px;background:#b4765a;}
+.about-section .content .content-list li:last-child{margin:0;}
+.about-section .content .content-list h6{text-transform: capitalize; font-family:'Enriqueta' !important;color:#ffffff !important;font-weight:400;margin:0;}
+/*! CSS Used from: https://templates.hibootstrap.com/wofy/default/assets/css/responsive.css */
+@media only screen and (max-width: 767px){
+h2{font-size:30px;}
+.pt-100{padding-top:50px;}
+.pb-70{padding-bottom:20px;}
+
+.primary-btn{padding:10px 18px;font-size:14px;}
+.about-section::before{height:25%;}
+.about-section .bg-shape img{height:35%;}
+.about-section .content .title{padding-bottom:15px;margin-bottom:15px;}
+.about-section .content .title span{bottom:-2px;}
+.about-section .content .text{margin-bottom:20px;}
+.about-section .content .content-list{margin-bottom:25px;}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+h2{font-size:40px;}
+.pt-100{padding-top:90px;}
+.pb-70{padding-bottom:60px;}
+.about-section::before{height:25%;}
+.about-section .bg-shape img{height:35%;}
+.about-section .content .title{padding-bottom:15px;margin-bottom:15px;}
+.about-section .content .title span{bottom:-2px;}
+.about-section .content .text{margin-bottom:20px;}
+.about-section .content .content-list{margin-bottom:25px;}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+h2{font-size:38px;}
+.about-section .content .title{padding-bottom:15px;margin-bottom:15px;}
+.about-section .content .title span{bottom:-2px;}
+.about-section .content .text{margin-bottom:20px;}
+.about-section .content .content-list{margin-bottom:25px;}
+}
+/*! CSS Used fontfaces */
+</style>
